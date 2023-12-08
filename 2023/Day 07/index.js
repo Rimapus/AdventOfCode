@@ -10,34 +10,33 @@ const cardsLabel1 = ["A", "K", "Q", "J", "T", "9", "8", "7", "6", "5", "4", "3",
 const cardsLabel2 = ["A", "K", "Q", "T", "9", "8", "7", "6", "5", "4", "3", "2", "J"]
 
 const rankHand = (hand, part2 = false) => {
+    let occurences =
+        hand[0].split("").reduce(function (acc, curr) {
+            return acc[curr] ? acc[curr]++ : acc[curr] = 1, acc
+        }, {})
 
-    let handOccurences
     if (part2) {
-        // const jokerCount = hand[0].split("").filter(card => card === "J").length
+        const jokerCount = occurences["J"]
 
-        handOccurences = Object.values(
-            hand[0].split("").filter(card => card !== "J").reduce(function (acc, curr) {
-                return acc[curr] ? ++acc[curr] : acc[curr] = 3, acc
-            }, {})
-        )
-        console.log(hand, handOccurences)
+        if (jokerCount && jokerCount !== 5) {
+            delete occurences["J"]
 
-    } else {
-        handOccurences = Object.values(
-            hand[0].split("").reduce(function (acc, curr) {
-                return acc[curr] ? ++acc[curr] : acc[curr] = 1, acc
-            }, {})
-        )
+            const maxOccurence = Object.entries(occurences).sort((a, b) => {
+                return b[1] - a[1]
+            })[0][0]
+
+            occurences[maxOccurence] += jokerCount
+        }
     }
 
-    
+    occurences = Object.values(occurences)
 
-    if (handOccurences.includes(5)) return 6 // Five of a kind
-    if (handOccurences.includes(4)) return 5 // Four of a kind
-    if (handOccurences.includes(3) && handOccurences.includes(2)) return 4 // Full house
-    if (handOccurences.includes(3)) return 3 // Three of a kind
+    if (occurences.includes(5)) return 6 // Five of a kind
+    if (occurences.includes(4)) return 5 // Four of a kind
+    if (occurences.includes(3) && occurences.includes(2)) return 4 // Full house
+    if (occurences.includes(3)) return 3 // Three of a kind
 
-    const handPairCount = handOccurences.filter((count) => count === 2).length
+    const handPairCount = occurences.filter((count) => count === 2).length
     if (handPairCount === 2) return 2 // Two pair
     if (handPairCount === 1) return 1 // One pair
 
@@ -52,9 +51,10 @@ const sortHands = (hand1, hand2, part2 = false) => {
 
     for (let i = 0; i < 5; i++) {
         if (hand1[0][i] !== hand2[0][i]) {
-            return cardsLabel1.indexOf(hand1[0][i]) > cardsLabel1.indexOf(hand2[0][i]) ? -1 : 1
+            return (part2 ? cardsLabel2 : cardsLabel1).indexOf(hand1[0][i]) > (part2 ? cardsLabel2 : cardsLabel1).indexOf(hand2[0][i]) ? -1 : 1
         }
     }
+
 }
 
 // Part 1
@@ -62,5 +62,5 @@ console.log(`Part 1 answer: ${input.sort(sortHands).map((hand, i) => hand[1] * (
 
 
 // Part 2
-console.log(input.sort((a, b) => sortHands(a, b, true)))
-console.log(`Part 2 answer: ${""}`) // 
+// Thx https://www.reddit.com/r/adventofcode/comments/18cnzbm/comment/kcf5pe0/ for the part 2
+console.log(`Part 2 answer: ${input.sort((a, b) => sortHands(a, b, true)).map((hand, i) => hand[1] * (i + 1)).reduce((a, b) => a + b)}`) // 253362743
