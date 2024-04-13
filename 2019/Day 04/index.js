@@ -40,5 +40,6 @@ for (let i = input[0]; i < input[1] + 1; i++) {
 // Part 1
 console.log(`Part 1 answer: ${validPWCount1}`) // 460
 
+
 // Part 2
 console.log(`Part 2 answer: ${validPWCount2}`) // 290

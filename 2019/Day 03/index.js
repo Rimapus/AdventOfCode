@@ -64,5 +64,6 @@ wire1.forEach((segment1, i1) => {
 // Part 1
 console.log(`Part 1 answer: ${Math.min(...intersections.map(int => int.distance))}`) // 1064
 
+
 // Part 2
 console.log(`Part 2 answer: ${Math.min(...intersections.map(int => int.steps))}`) // 25676
