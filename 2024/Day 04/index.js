@@ -27,6 +27,7 @@ function countXMAS(input, j, i) { // Ugly af but it works
         counter++; // UP-LEFT
     return counter;
 }
+
 let XMASCounter = 0;
 for (let j = 0; j < input.length; j++) {
     for (let i = 0; i < input[0].length; i++) {
