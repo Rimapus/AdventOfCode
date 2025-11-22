@@ -1,20 +1,12 @@
 {
   "name": "adventofcode",
   "version": "1.0.0",
-  "description": "",
+  "description": "Rimapus' solutions for Advent of Code.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Wumpus-js/AdventOfCode.git"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Wumpus-js/AdventOfCode/issues"
-  },
-  "homepage": "https://github.com/Wumpus-js/AdventOfCode#readme"
+  "license": "ISC"
 }
