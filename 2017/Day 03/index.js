@@ -9,7 +9,7 @@ console.log("AoC 2017 Day 3:");
 let squareSize = 1;
 while (Math.pow(squareSize, 2) < input)
     squareSize++;
-if (squareSize % 2 != 1)
+if (squareSize % 2 !== 1)
     squareSize++;
 
 let grid = JSON.parse(JSON.stringify(new Array(squareSize).fill(new Array(squareSize).fill(0))));
@@ -22,11 +22,11 @@ let xDiffs = [1, 0, -1, 0],  // East, north, west, south
     yDiffs = [0, -1, 0, 1];
 let orientation = 0; // Starting east
 
-while (value != input) {
+while (value !== input) {
     grid[y][x] = value;
     x += xDiffs[orientation];
     y += yDiffs[orientation];
-    if (grid[y + yDiffs[(orientation + 1) % 4]][x + xDiffs[(orientation + 1) % 4]] == 0) {
+    if (grid[y + yDiffs[(orientation + 1) % 4]][x + xDiffs[(orientation + 1) % 4]] === 0) {
         orientation += 1;
         orientation %= 4;
     }
@@ -47,7 +47,7 @@ function getNeighborSum(grid, x, y) {
     sum += grid[y + 1]?.[x - 1] || 0;
     sum += grid[y + 1]?.[x] || 0;
     sum += grid[y + 1]?.[x + 1] || 0;
-    if (sum == 0)
+    if (sum === 0)
         sum = 1;
     return sum;
 }
@@ -63,7 +63,7 @@ while (value <= input) {
     grid[y][x] = value;
     x += xDiffs[orientation];
     y += yDiffs[orientation];
-    if (grid[y + yDiffs[(orientation + 1) % 4]][x + xDiffs[(orientation + 1) % 4]] == 0) {
+    if (grid[y + yDiffs[(orientation + 1) % 4]][x + xDiffs[(orientation + 1) % 4]] === 0) {
         orientation += 1;
         orientation %= 4;
     }

@@ -34,9 +34,9 @@ const wire2 = parseWire(input[1]);
 let intersections = [];
 wire1.forEach((segment1, i1) => {
     wire2.forEach((segment2, i2) => {
-        if ((segment1.from[0] == segment1.to[0]) ^ (segment2.from[0] == segment2.to[0])) {
-            const vertical = segment1.from[0] == segment1.to[0] ? segment1 : segment2;
-            const horizontal = segment1.from[0] == segment1.to[0] ? segment2 : segment1;
+        if ((segment1.from[0] === segment1.to[0]) ^ (segment2.from[0] === segment2.to[0])) {
+            const vertical = segment1.from[0] === segment1.to[0] ? segment1 : segment2;
+            const horizontal = segment1.from[0] === segment1.to[0] ? segment2 : segment1;
 
             const minX = Math.min(horizontal.from[0], horizontal.to[0]);
             const maxX = Math.max(horizontal.from[0], horizontal.to[0]);

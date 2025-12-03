@@ -14,18 +14,18 @@ let asleepMinute;
 for (let i = 0; i < input.length; i++) {
     let record = input[i][5];
     let regexOut = record.match(/Guard #([0-9]+) begins shift/);
-    if (regexOut != null) {
+    if (regexOut !== null) {
         if (!guards[regexOut[1]]) {
             guards[regexOut[1]] = { asleep: false, asleepHours: {} };
         }
         currentGuard = regexOut[1];
         continue;
     }
-    if (record == "falls asleep") {
+    if (record === "falls asleep") {
         guards[currentGuard].asleep = true;
         asleepMinute = +input[i][4];
     }
-    if (record == "wakes up") {
+    if (record === "wakes up") {
         guards[currentGuard].asleep = false;
         for (let j = asleepMinute; j < asleepMinute + (+input[i][4] - asleepMinute); j++) {
             if (!guards[currentGuard].asleepHours[j]) {

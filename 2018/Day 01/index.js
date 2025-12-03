@@ -8,7 +8,7 @@ input = input.split(/\r?\n/)
 console.log("AoC 2018 Day 1:");
 
 let frequency = 0;
-let answer1, answer2;
+let answer1 = null, answer2 = null;
 const reachedFreq = [];
 
 for (const change of input) {
@@ -22,7 +22,7 @@ for (const change of input) {
 }
 answer1 = frequency;
 
-while (answer2 == null) {
+while (answer2 === null) {
     for (const freq of reachedFreq) {
         if (reachedFreq.includes(freq + frequency)) {
             answer2 = freq + frequency;

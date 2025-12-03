@@ -14,7 +14,7 @@ input.forEach(row => {
 
     for (const i in row) {
         for (const j in row) {
-            if (i !== j && (row[i] % row[j] == 0)) {
+            if (i !== j && (row[i] % row[j] === 0)) {
                 checksum2 += row[i] / row[j];
             }
         }

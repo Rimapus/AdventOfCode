@@ -12,9 +12,9 @@ input.forEach(password => {
     let valid2 = true;
     for (let i = 0; i < password.length; i++) {
         for (let j = i + 1; j < password.length; j++) {
-            if (password[i].split("").sort().join("") == password[j].split("").sort().join(""))
+            if (password[i].split("").sort().join("") === password[j].split("").sort().join(""))
                 valid2 = false;
-            if (password[i] == password[j])
+            if (password[i] === password[j])
                 return;
         }
     }

@@ -43,8 +43,8 @@ for (const program of Object.values(programs)) {
     weightOccurences = weightOccurences.sort((a, b) => a[1] - b[1]);
 
     if (weightOccurences.length === 1) continue;
-    const incorrectWeight = weightOccurences[0][0];
-    let incorrectDisc = towersWeight.find(disc => disc[1] == incorrectWeight);
+    const incorrectWeight = Number(weightOccurences[0][0]);
+    let incorrectDisc = towersWeight.find(disc => disc[1] === incorrectWeight);
     incorrectDisc = programs[incorrectDisc[0]];
 
     correctWeight = incorrectDisc[0] + (weightOccurences[1][0] - incorrectWeight);

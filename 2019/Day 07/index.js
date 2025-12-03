@@ -17,7 +17,7 @@ function getPermutations(arr) {
     for (i = 0; i < arr.length; i++) {
         ch = arr.splice(i, 1)[0];
         usedChars.push(ch);
-        if (arr.length == 0) {
+        if (arr.length === 0) {
             permArr.push(usedChars.slice());
         }
         getPermutations(arr);

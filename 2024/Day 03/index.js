@@ -17,9 +17,9 @@ input.forEach(line => {
         return prev;
     }, 0);
     sum2 += matches.reduce((prev, curr) => {
-        if (curr[0] == "do()")
+        if (curr[0] === "do()")
             mul_enabled = true;
-        if (curr[0] == "don't()")
+        if (curr[0] === "don't()")
             mul_enabled = false;
         if (mul_enabled && curr[0].startsWith("mul("))
             prev += +curr[1] * +curr[2];

@@ -13,7 +13,7 @@ input.forEach(elem => {
     let cache = [];
     let autocompleteScore = 0;
 
-    for (let elemIndex in elem) {
+    for (const elemIndex in elem) {
         let elem1 = elem[elemIndex];
 
         if (["(", "[", "{", "<"].includes(elem1)) {
@@ -33,7 +33,7 @@ input.forEach(elem => {
             }
         }
 
-        if (elemIndex == elem.length - 1) {
+        if (Number(elemIndex) === elem.length - 1) {
             // Incomplete line
             cache.reverse().forEach(e => {
                 autocompleteScore *= 5;

@@ -9,8 +9,8 @@ console.log("AoC 2018 Day 5:");
 function reactPolymer(input) {
     let i = 0;
     while (i < input.length - 1) {
-        if (input[i] == input[i].toLowerCase() && input[i + 1] == input[i].toUpperCase() ||
-            input[i] == input[i].toUpperCase() && input[i + 1] == input[i].toLowerCase()) {
+        if (input[i] === input[i].toLowerCase() && input[i + 1] === input[i].toUpperCase() ||
+            input[i] === input[i].toUpperCase() && input[i + 1] === input[i].toLowerCase()) {
             input.splice(i, 2);
             if (i > 0)
                 i--;

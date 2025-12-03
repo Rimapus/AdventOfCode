@@ -20,7 +20,7 @@ let similarityScore = 0;
 for (let i = 0; i < col1.length; i++) {
     let countInCol2 = 0;
     for (let j = 0; j < col2.length; j++) {
-        if (col2[j] == col1[i]) countInCol2++;
+        if (col2[j] === col1[i]) countInCol2++;
     }
     similarityScore += col1[i] * countInCol2;
 }

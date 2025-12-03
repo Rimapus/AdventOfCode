@@ -10,6 +10,7 @@ module.exports = [
             "@stylistic/semi-style": ["error", "last"],
             "@stylistic/indent": ["error", 4],
             "@stylistic/quotes": ["error", "double"],
+            "eqeqeq": ["error", "always"],
         }
     }
 ];
