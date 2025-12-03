@@ -7,7 +7,6 @@
 // @match        https://adventofcode.com/*
 // @run-at       document-start
 // @grant        GM_addStyle
-
 // ==/UserScript==
 
 GM_addStyle(`
@@ -23,7 +22,7 @@ body * {
 }
 article em {
     font-weight: bold;
-    color: #22ff68
+    color: #22ff68;
 }
 
 main > article + p,
@@ -34,10 +33,10 @@ main > article:not(:last-of-type) {
 code {
     font-family: "Source Code Pro", monospace;
     letter-spacing: 1px;
-    color: #ff6e6e
+    color: #ff6e6e;
 }
 
 article code em {
-    color: #ff6e6e
+    color: #ff6e6e;
 }
 `);

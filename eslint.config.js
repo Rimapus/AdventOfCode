@@ -11,6 +11,7 @@ module.exports = [
             "@stylistic/indent": ["error", 4],
             "@stylistic/quotes": ["error", "double"],
             "eqeqeq": ["error", "always"],
+            "no-var": ["error"],
         }
     }
 ];

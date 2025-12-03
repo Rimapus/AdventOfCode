@@ -10,9 +10,9 @@ console.log("AoC 2019 Day 7:");
 
 // Part 1
 // https://stackoverflow.com/a/9960925
-var permArr = [], usedChars = [];
+let permArr = [], usedChars = [];
 function getPermutations(arr) {
-    var i, ch;
+    let i, ch;
 
     for (i = 0; i < arr.length; i++) {
         ch = arr.splice(i, 1)[0];
