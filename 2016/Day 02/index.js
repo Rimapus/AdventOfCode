@@ -9,16 +9,16 @@ console.log("AoC 2016 Day 2:");
 
 const coefficients = [[0, -1], [0, 1], [-1, 0], [1, 0]]; // U, D, L, R
 const keypad = [[1, 2, 3],
-[4, 5, 6],
-[7, 8, 9]];
+    [4, 5, 6],
+    [7, 8, 9]];
 let currentDigitCoords = [1, 1];
 let code = [];
 
 const keypad2 = [[null, null, 1, null, null],
-[null, 2, 3, 4, null],
-[5, 6, 7, 8, 9],
-[null, "A", "B", "C", null],
-[null, null, "D", null, null]];
+    [null, 2, 3, 4, null],
+    [5, 6, 7, 8, 9],
+    [null, "A", "B", "C", null],
+    [null, null, "D", null, null]];
 let currentDigitCoords2 = [0, 2];
 let code2 = [];
 

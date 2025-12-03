@@ -11,14 +11,14 @@ let zeroes_p1 = 0;
 let zeroes_p2 = 0;
 for (const rotation of input) {
     switch (rotation[0]) {
-        case 'L':
+        case "L":
             for (let i = 0; i < rotation[1]; i++) {
                 dial--;
                 if (dial === 0) zeroes_p2++;
                 if (dial === -1) dial = 99;
             }
             break;
-        case 'R':
+        case "R":
             for (let i = 0; i < rotation[1]; i++) {
                 dial++;
                 if (dial === 100) {

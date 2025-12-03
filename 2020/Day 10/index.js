@@ -11,11 +11,11 @@ console.log("AoC 2020 Day 10:");
 let differences = { 1: 0, 3: 0 };
 let jolt = 0;
 ([...input].sort((a, b) => a - b)).forEach(elem => {
-  if (elem - jolt === 1) differences[1]++;
-  else if (elem - jolt === 2) differences[2]++;
-  else differences[3]++;
+    if (elem - jolt === 1) differences[1]++;
+    else if (elem - jolt === 2) differences[2]++;
+    else differences[3]++;
 
-  jolt = elem;
+    jolt = elem;
 });
 differences[3]++;
 

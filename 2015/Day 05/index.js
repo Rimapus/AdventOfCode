@@ -11,7 +11,7 @@ let niceCount = 0;
 input.forEach(elem => {
     if (elem.match(/[aeiou]/gi)?.length >= 3 &&
         /([a-z])\1+/.test(elem) &&
-        !['ab', 'cd', 'pq', 'xy'].some(elem1 => elem.includes(elem1)))
+        !["ab", "cd", "pq", "xy"].some(elem1 => elem.includes(elem1)))
         niceCount++;
 });
 

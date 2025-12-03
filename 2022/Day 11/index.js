@@ -8,11 +8,11 @@ for (let i = 0; i < input.length; i++) {
     let monkey = input[i];
     monkeys[i] = {
         items: monkey[1].split(/, | /).slice(2).map(Number),
-        operation: monkey[2].split(' ').slice(4).join(''),
+        operation: monkey[2].split(" ").slice(4).join(""),
         test: {
-            test: +monkey[3].split(' ').at(-1),
-            true: +monkey[4].split(' ').at(-1),
-            false: +monkey[5].split(' ').at(-1)
+            test: +monkey[3].split(" ").at(-1),
+            true: +monkey[4].split(" ").at(-1),
+            false: +monkey[5].split(" ").at(-1)
         }
     };
 }
@@ -31,7 +31,7 @@ for (let i = 0; i < 20; i++) {
 
         for (let k = 0; k < monkey.items.length; k++) {
             let item = monkey.items[k];
-            let newItem = eval(`Math.floor((${item}${monkey.operation.replace('old', item)})/3)`);
+            let newItem = eval(`Math.floor((${item}${monkey.operation.replace("old", item)})/3)`);
             newItem % monkey.test.test === 0 ? monkeysPart1[monkey.test.true].items.push(newItem) : monkeysPart1[monkey.test.false].items.push(newItem);
         }
         monkey.items = [];
@@ -52,7 +52,7 @@ for (let i = 0; i < 10000; i++) {
 
         for (let k = 0; k < monkey.items.length; k++) {
             let item = monkey.items[k] % superModulo;
-            let newItem = eval(`${item}${monkey.operation.replace('old', item)}`);
+            let newItem = eval(`${item}${monkey.operation.replace("old", item)}`);
             newItem % monkey.test.test === 0 ? monkeysPart2[monkey.test.true].items.push(newItem) : monkeysPart2[monkey.test.false].items.push(newItem);
         }
         monkey.items = [];

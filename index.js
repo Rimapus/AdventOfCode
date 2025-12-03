@@ -37,7 +37,7 @@ function updateStatus() {
         .length));
     const maxDaysName = Array.from({ length: maxDays }, (_, i) => `Day ${String(i + 1).padStart(2, "0")}`);
 
-    let output = `# [AdventOfCode](https://adventofcode.com/)\n\n${`| **\`⭐{EARNED_STARS}/{TOTAL_STARS}\`** | ` + maxDaysName.join(" | ") + " |"}\n${"| :---: ".repeat(maxDaysName.length + 1) + "|"}`;
+    let output = `# [AdventOfCode](https://adventofcode.com/)\n\n${"| **`⭐{EARNED_STARS}/{TOTAL_STARS}`** | " + maxDaysName.join(" | ") + " |"}\n${"| :---: ".repeat(maxDaysName.length + 1) + "|"}`;
 
     let earnedStars = 0, totalStars = 0;
     years.forEach(year => {

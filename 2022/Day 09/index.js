@@ -1,14 +1,14 @@
 const fs = require("fs");
 let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
 
-input = input.split(/\r?\n/).map(elem => [elem.split(' ')[0], +elem.split(' ')[1]]);
+input = input.split(/\r?\n/).map(elem => [elem.split(" ")[0], +elem.split(" ")[1]]);
 let ropes = [[...Array(2)].map(() => [0, 0]), [...Array(10)].map(() => [0, 0])];
 let tailsVisitedPositions = [[], []];
 
 for (const line of input) {
-    let directions = { 'L': 0, 'R': 0, 'U': 0, 'D': 0 };
+    let directions = { "L": 0, "R": 0, "U": 0, "D": 0 };
     directions[line[0]] += line[1];
-    let movements = [directions['R'] - directions['L'], directions['U'] - directions['D']]; // x, y
+    let movements = [directions["R"] - directions["L"], directions["U"] - directions["D"]]; // x, y
     let activeMovementIdx = movements.findIndex((elem) => elem !== 0);
     let activeMovement = movements[activeMovementIdx];
 

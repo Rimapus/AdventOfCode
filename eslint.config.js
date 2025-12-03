@@ -1,7 +1,15 @@
+const stylistic = require("@stylistic/eslint-plugin");
+
 module.exports = [
     {
-        rules: {
-            semi: ["error", "always"],
+        plugins: {
+            "@stylistic": stylistic
         },
-    },
+        rules: {
+            "@stylistic/semi": ["error", "always"],
+            "@stylistic/semi-style": ["error", "last"],
+            "@stylistic/indent": ["error", 4],
+            "@stylistic/quotes": ["error", "double"],
+        }
+    }
 ];

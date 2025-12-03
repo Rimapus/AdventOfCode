@@ -24,22 +24,22 @@ originalGuardPosition = [...guardPosition];
 
 while (guardPosition[0] >= 0 && guardPosition[0] < mapSize[0] && 
     guardPosition[1] >= 0 && guardPosition[1] < mapSize[1]) {
-        if (input[guardPosition[1]][guardPosition[0]] === (directions.findIndex(dir => dir === directionVector.join(",")) + 1) % 4)
-            possibleObstructions++;
+    if (input[guardPosition[1]][guardPosition[0]] === (directions.findIndex(dir => dir === directionVector.join(",")) + 1) % 4)
+        possibleObstructions++;
 
-        input[guardPosition[1]][guardPosition[0]] = directions.findIndex(dir => dir === directionVector.join(","));
-        const newPosition = [guardPosition[0] + directionVector[0], guardPosition[1] + directionVector[1]];
+    input[guardPosition[1]][guardPosition[0]] = directions.findIndex(dir => dir === directionVector.join(","));
+    const newPosition = [guardPosition[0] + directionVector[0], guardPosition[1] + directionVector[1]];
 
-        if (newPosition[0] < 0 || newPosition[0] >= mapSize[0] || 
+    if (newPosition[0] < 0 || newPosition[0] >= mapSize[0] || 
             newPosition[1] < 0 || newPosition[1] >= mapSize[1]) break;
         
-        const newCase = input[newPosition[1]][newPosition[0]];
+    const newCase = input[newPosition[1]][newPosition[0]];
 
-        if (newCase === "#") {
-            directionVector = [-directionVector[1], directionVector[0]];
-            continue;
-        }
-        guardPosition = newPosition;
+    if (newCase === "#") {
+        directionVector = [-directionVector[1], directionVector[0]];
+        continue;
+    }
+    guardPosition = newPosition;
 }
 
 // Part 1

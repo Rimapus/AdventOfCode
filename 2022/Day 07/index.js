@@ -1,25 +1,25 @@
 const fs = require("fs");
 let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
 
-input = input.split(/\r?\n/).map(elem => elem.split(' '));
+input = input.split(/\r?\n/).map(elem => elem.split(" "));
 
 let currentDir = [];
 let filesystem = [];
 for (const lineIndex in input) {
     let line = input[lineIndex];
-    if (line[0] === '$') {
-        if (line[1] === 'cd') {
-            if (line[2] === '..') currentDir.pop();
+    if (line[0] === "$") {
+        if (line[1] === "cd") {
+            if (line[2] === "..") currentDir.pop();
             else {
                 currentDir.push(line[2]);
-                filesystem[currentDir.join('/')] = {size: 0};
+                filesystem[currentDir.join("/")] = {size: 0};
             }
         }
-    } else if (line[0] !== 'dir') {
+    } else if (line[0] !== "dir") {
         let tempPath = [];
         currentDir.forEach(elem => {
             tempPath.push(elem);
-            filesystem[tempPath.join('/')].size += +line[0];
+            filesystem[tempPath.join("/")].size += +line[0];
         });
     }
 }
@@ -37,7 +37,7 @@ console.log(`Part 1 answer: ${filesystemSum}`); // 1390824
 
 
 // Part 2
-let spaceToFree = filesystem['/'].size-40000000;
+let spaceToFree = filesystem["/"].size-40000000;
 let possibleDirs = [];
 for (const dir in filesystem) {
     if (filesystem[dir].size > spaceToFree) possibleDirs.push(filesystem[dir].size);

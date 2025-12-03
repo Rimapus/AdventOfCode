@@ -21,7 +21,7 @@ console.log(`Part 1 answer: ${literalLength - memoryLength}`); // 1333
 // Part 2
 let encodedLength = 0;
 for (let i = 0; i < input.length; i++) {
-    encodedLength += input[i].replaceAll('\\', '\\\\').replaceAll('"', '\\"').length + 2; // + 2 because of start and end "
+    encodedLength += input[i].replaceAll("\\", "\\\\").replaceAll("\"", "\\\"").length + 2; // + 2 because of start and end "
 }
 
 console.log(`Part 2 answer: ${encodedLength - literalLength}`); // 2046

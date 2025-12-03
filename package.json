@@ -1,15 +1,16 @@
 {
-  "name": "adventofcode",
-  "version": "1.0.0",
-  "description": "Rimapus' solutions for Advent of Code.",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "eslint": "^9.39.1"
-  }
+    "name": "adventofcode",
+    "version": "1.0.0",
+    "description": "Rimapus' solutions for Advent of Code.",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "lint": "eslint --fix"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@stylistic/eslint-plugin": "^5.6.1"
+    }
 }

@@ -1,7 +1,7 @@
 const fs = require("fs");
 let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
 
-input = input.split(/\r?\n/).map(elem => elem.split('').map(Number));
+input = input.split(/\r?\n/).map(elem => elem.split("").map(Number));
 
 
 console.log("AoC 2022 Day 8:");

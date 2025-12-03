@@ -8,7 +8,7 @@ input = input.split(/\r?\n/)
             .split(",")
             .map(elem1 => {
                 elem1 = elem1.trim();
-                return [+elem1.slice(0, elem1.indexOf(' ') + 1), elem1.slice(elem1.indexOf(' ') + 1).split(" ", 2).join(" ")];
+                return [+elem1.slice(0, elem1.indexOf(" ") + 1), elem1.slice(elem1.indexOf(" ") + 1).split(" ", 2).join(" ")];
             })
     ]);
 

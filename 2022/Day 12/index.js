@@ -5,15 +5,15 @@
 const fs = require("fs");
 let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
 
-input = input.split(/\r?\n/).map(elem => elem.split(''));
+input = input.split(/\r?\n/).map(elem => elem.split(""));
 
-const alphabet = ['S'].concat([...Array(26)].map((_, i) => String.fromCharCode(i + 97)).concat(['E']));
+const alphabet = ["S"].concat([...Array(26)].map((_, i) => String.fromCharCode(i + 97)).concat(["E"]));
 
-let startY = input.findIndex(row => row.includes('S'));
-let startX = input[startY].indexOf('S');
+let startY = input.findIndex(row => row.includes("S"));
+let startX = input[startY].indexOf("S");
 let start = [startX, startY];
-let endY = input.findIndex(row => row.includes('E'));
-let endX = input[endY].indexOf('E');
+let endY = input.findIndex(row => row.includes("E"));
+let endX = input[endY].indexOf("E");
 let end = [endX, endY];
 
 let currentCoord = end;
@@ -47,7 +47,7 @@ for (let i = 0; i < 31; i++) {
         // console.log(neighbors, neighborsLetter, elem, currentLetter)
         if (alphabet.indexOf(elem) === alphabet.indexOf(currentLetter) - 1 ||
             alphabet.indexOf(elem) === alphabet.indexOf(currentLetter)) {
-                console.log("ok", elem, i);
+            console.log("ok", elem, i);
             spots[neighbors[i]] = { distance: distanceToEnd };
             break;
         }
@@ -55,7 +55,7 @@ for (let i = 0; i < 31; i++) {
 
     console.log(currentCoord);
     // console.log(spots)
-    currentCoord = Object.keys(spots)[Object.keys(spots).length - 1].split(',').map(Number);
+    currentCoord = Object.keys(spots)[Object.keys(spots).length - 1].split(",").map(Number);
     console.log(currentCoord);
 
 }
