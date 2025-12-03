@@ -23,7 +23,7 @@ function createNewYear(year) {
 
         fs.mkdirSync(`${__dirname}/${year}/Day ${newDay}`, { recursive: true });
         fs.writeFileSync(`${__dirname}/${year}/Day ${newDay}/input.txt`, "");
-        fs.writeFileSync(`${__dirname}/${year}/Day ${newDay}/index.js`, `const fs = require("fs")\nlet input = fs.readFileSync(\`\${__dirname\}/input.txt\`, "utf8")\n\n\nconsole.log("AoC ${year} Day ${i}:")\n\n// Part 1\nconsole.log(\`Part 1 answer: \${""}\`) // \n\n\n// Part 2\nconsole.log(\`Part 2 answer: \${""}\`) // `);
+        fs.writeFileSync(`${__dirname}/${year}/Day ${newDay}/index.js`, `const fs = require("fs");\nlet input = fs.readFileSync(\`\${__dirname\}/input.txt\`, "utf8");\n\n\nconsole.log("AoC ${year} Day ${i}:");\n\n// Part 1\nconsole.log(\`Part 1 answer: \${""}\`); // \n\n\n// Part 2\nconsole.log(\`Part 2 answer: \${""}\`); // `);
     }
 }
 
@@ -54,12 +54,12 @@ function updateStatus() {
 
             yearStars += dayStars;
             yearOutput += ` [${dayStars === 2 ? "🟢" : dayStars === 1 ? "🟡" : "🔴"}](https://adventofcode.com/${year}/day/${i + 1} '⭐${dayStars}/2') |`;
-        })
+        });
 
         earnedStars += yearStars;
         totalStars += yearDays.length * 2;
         output += `\n${yearOutput.replace("{YEAR_STARS}", yearStars)}`;
-    })
+    });
 
     output = output.replace("{EARNED_STARS}", earnedStars);
     output = output.replace("{TOTAL_STARS}", totalStars);

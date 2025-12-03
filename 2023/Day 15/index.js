@@ -1,10 +1,10 @@
-const fs = require("fs")
-let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8")
+const fs = require("fs");
+let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
 
-input = input.split(",")
+input = input.split(",");
 
 
-console.log("AoC 2023 Day 15:")
+console.log("AoC 2023 Day 15:");
 
 function hash(string) {
     let currentValue = 0;
@@ -18,7 +18,7 @@ function hash(string) {
 
 // Part 1
 let hashSum = input.reduce((a, b) => a + hash(b), 0);
-console.log(`Part 1 answer: ${hashSum}`) // 504449
+console.log(`Part 1 answer: ${hashSum}`); // 504449
 
 
 // Part 2
@@ -46,4 +46,4 @@ boxes.forEach((box, boxIndex) => {
         focusingPower += (boxIndex + 1) * (lensIndex + 1) * lens[1];
     });
 });
-console.log(`Part 2 answer: ${focusingPower}`) // 262044
+console.log(`Part 2 answer: ${focusingPower}`); // 262044
