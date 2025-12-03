@@ -1,10 +1,10 @@
-const fs = require("fs")
-let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8")
+const fs = require("fs");
+let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
 
 input = input.split(/\r?\n/).map(elem => elem.split(""));
 
 
-console.log("AoC 2024 Day 6:")
+console.log("AoC 2024 Day 6:");
 
 const directions = ["0,-1", "1,0", "0,1", "-1,0"]; // up, down, left right
 const mapSize = [input[0].length, input.length];
@@ -19,7 +19,7 @@ input.forEach((line, index) => {
         guardPosition = [guardX, index];
         return;
     }
-})
+});
 originalGuardPosition = [...guardPosition];
 
 while (guardPosition[0] >= 0 && guardPosition[0] < mapSize[0] && 
@@ -44,10 +44,10 @@ while (guardPosition[0] >= 0 && guardPosition[0] < mapSize[0] &&
 
 // Part 1
 const visitedCount = input.reduce((a, b) => a + b.filter(c => c !== "." && c !== "#").length, 0);
-console.log(`Part 1 answer: ${visitedCount}`) // 4982
+console.log(`Part 1 answer: ${visitedCount}`); // 4982
 
 
 // Part 2
-input.map(line => console.log(line.join("")))
+input.map(line => console.log(line.join("")));
 
-console.log(`Part 2 answer: ${possibleObstructions}`) // 
+console.log(`Part 2 answer: ${possibleObstructions}`); // 

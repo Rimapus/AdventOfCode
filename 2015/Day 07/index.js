@@ -1,8 +1,8 @@
 // Code inspired by https://github.com/shahata/adventofcode-solver/blob/89d085ed8b245688c546e19ba0e43138a1b88161/src/2015/day07.js
-const fs = require("fs")
-let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8")
+const fs = require("fs");
+let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
 
-input = input.split(/\r?\n/)
+input = input.split(/\r?\n/);
 
 const ops = {
     AND: (p1, p2) => (Math.pow(2, 16) + ((p1 || 0) & (p2 || 0))) % Math.pow(2, 16),
@@ -14,7 +14,7 @@ const ops = {
 };
 
 
-console.log("AoC 2015 Day 7:")
+console.log("AoC 2015 Day 7:");
 
 // Part 1
 let wires = input
@@ -36,7 +36,7 @@ let wires = input
         return circuit;
     }, {});
 
-console.log(`Part 1 answer: ${wires.a()}`) // 3176
+console.log(`Part 1 answer: ${wires.a()}`); // 3176
 
 
 // Part 2
@@ -59,4 +59,4 @@ wires = input.concat(`${wires.a()} -> b`)
         return circuit;
     }, {});
 
-console.log(`Part 2 answer: ${wires.a()}`) // 14710
+console.log(`Part 2 answer: ${wires.a()}`); // 14710

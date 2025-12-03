@@ -1,10 +1,10 @@
-const fs = require("fs")
-let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8")
+const fs = require("fs");
+let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
 
-input = input.split(/\r?\n/).map(elem => elem.split(""))
+input = input.split(/\r?\n/).map(elem => elem.split(""));
 
 
-console.log("AoC 2024 Day 4:")
+console.log("AoC 2024 Day 4:");
 
 // Part 1
 function countXMAS(input, j, i) { // Ugly af but it works
@@ -35,7 +35,7 @@ for (let j = 0; j < input.length; j++) {
             XMASCounter += countXMAS(input, j, i);
     }
 }
-console.log(`Part 1 answer: ${XMASCounter}`) // 2500
+console.log(`Part 1 answer: ${XMASCounter}`); // 2500
 
 
 // Part 2
@@ -67,4 +67,4 @@ for (let j = 0; j < input.length; j++) {
             X_MASCounter += countX_MAS(input, j, i);
     }
 }
-console.log(`Part 2 answer: ${X_MASCounter}`) // 1933
+console.log(`Part 2 answer: ${X_MASCounter}`); // 1933

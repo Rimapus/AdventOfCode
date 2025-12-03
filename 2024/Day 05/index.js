@@ -1,12 +1,12 @@
-const fs = require("fs")
-let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8")
+const fs = require("fs");
+let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
 
 input = input.split(/\r?\n\r?\n/).map(elem => elem.trim().split(/\r?\n/));
 input[0] = input[0].map(elem => elem.split("|").map(Number));
 input[1] = input[1].map(elem => elem.split(",").map(Number));
 
 
-console.log("AoC 2024 Day 5:")
+console.log("AoC 2024 Day 5:");
 
 let correctlyOrderedMiddleSum = 0;
 const incorrectUpdates = [];
@@ -34,7 +34,7 @@ for (const update of input[1]) {
 }
 
 // Part 1
-console.log(`Part 1 answer: ${correctlyOrderedMiddleSum}`) // 5762
+console.log(`Part 1 answer: ${correctlyOrderedMiddleSum}`); // 5762
 
 
 // Part 2
@@ -63,4 +63,4 @@ for (const update of incorrectUpdates) {
 }
 
 const incorrectlyOrderedMiddleSum = incorrectUpdates.reduce((a, b) => a + b[((b.length - 1) / 2)], 0);
-console.log(`Part 2 answer: ${incorrectlyOrderedMiddleSum}`) // 4130
+console.log(`Part 2 answer: ${incorrectlyOrderedMiddleSum}`); // 4130

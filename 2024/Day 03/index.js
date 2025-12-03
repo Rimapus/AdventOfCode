@@ -1,10 +1,10 @@
-const fs = require("fs")
-let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8")
+const fs = require("fs");
+let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
 
-input = input.split(/\r?\n/)
+input = input.split(/\r?\n/);
 
 
-console.log("AoC 2024 Day 3:")
+console.log("AoC 2024 Day 3:");
 
 let sum1 = 0;
 let mul_enabled = true;
@@ -28,8 +28,8 @@ input.forEach(line => {
 });
 
 // Part 1
-console.log(`Part 1 answer: ${sum1}`) // 161289189
+console.log(`Part 1 answer: ${sum1}`); // 161289189
 
 
 // Part 2
-console.log(`Part 2 answer: ${sum2}`) // 83595109
+console.log(`Part 2 answer: ${sum2}`); // 83595109

@@ -50,7 +50,7 @@ function updateStatus() {
         let yearStars = 0;
         yearDays.forEach((day, i) => {
             const dayFile = fs.readFileSync(`${__dirname}/${year}/${day}/index.js`).toString();
-            const dayStars = dayFile.match(/console\.log\(`Part (?:1|2) answer:.+`\) \/\/ .+/g)?.length ?? 0;
+            const dayStars = dayFile.match(/console\.log\(`Part (?:1|2) answer:.+`\); \/\/ .+/g)?.length ?? 0;
 
             yearStars += dayStars;
             yearOutput += ` [${dayStars === 2 ? "🟢" : dayStars === 1 ? "🟡" : "🔴"}](https://adventofcode.com/${year}/day/${i + 1} '⭐${dayStars}/2') |`;

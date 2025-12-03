@@ -1,12 +1,12 @@
-const fs = require("fs")
-let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8")
+const fs = require("fs");
+let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
 
 input = input.split(/\r?\n/)
     .map(elem => Array.from(elem.match(/#([0-9]+) @ ([0-9]+),([0-9]+): ([0-9]+)x([0-9]+)/).slice(1))
-        .map(Number))
+        .map(Number));
 
 
-console.log("AoC 2018 Day 3:")
+console.log("AoC 2018 Day 3:");
 
 // Part 1
 let maxWidth = 0;
@@ -29,8 +29,8 @@ input.forEach(claim => {
 let overlapCount = 0;
 grid.forEach(line => {
     overlapCount += line.filter(elem => elem > 1).length;
-})
-console.log(`Part 1 answer: ${overlapCount}`) // 111485
+});
+console.log(`Part 1 answer: ${overlapCount}`); // 111485
 
 
 // Part 2
@@ -46,6 +46,6 @@ input.forEach(claim => {
         }
     }
     if (!hasOverlap)
-        answer2 = claim[0]
+        answer2 = claim[0];
 });
-console.log(`Part 2 answer: ${answer2}`) // 113
+console.log(`Part 2 answer: ${answer2}`); // 113

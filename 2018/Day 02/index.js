@@ -1,10 +1,10 @@
-const fs = require("fs")
-let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8")
+const fs = require("fs");
+let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
 
-input = input.split(/\r?\n/)
+input = input.split(/\r?\n/);
 
 
-console.log("AoC 2018 Day 2:")
+console.log("AoC 2018 Day 2:");
 
 // Part 1
 let pairCount = 0;
@@ -36,7 +36,7 @@ input.forEach(boxId => {
     if (containsTrio)
         trioCount++;
 });
-console.log(`Part 1 answer: ${pairCount * trioCount}`) // 7163
+console.log(`Part 1 answer: ${pairCount * trioCount}`); // 7163
 
 
 // Part 2
@@ -57,4 +57,4 @@ for (let i = 0; i < input.length; i++) {
         }
     }
 }
-console.log(`Part 2 answer: ${answer2.join("")}`) // ighfbyijnoumxjlxevacpwqtr
+console.log(`Part 2 answer: ${answer2.join("")}`); // ighfbyijnoumxjlxevacpwqtr

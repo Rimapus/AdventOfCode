@@ -1,9 +1,9 @@
-const fs = require("fs")
-let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8")
+const fs = require("fs");
+let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
 
-input = +input
+input = +input;
 
-console.log("AoC 2017 Day 3:")
+console.log("AoC 2017 Day 3:");
 
 // Part 1
 let squareSize = 1;
@@ -33,7 +33,7 @@ while (value != input) {
     value++;
 }
 let distanceToStart = Math.abs(x - Math.floor(squareSize / 2)) + Math.abs(y - Math.floor(squareSize / 2));
-console.log(`Part 1 answer: ${distanceToStart}`) // 326
+console.log(`Part 1 answer: ${distanceToStart}`); // 326
 
 
 // Part 2
@@ -68,4 +68,4 @@ while (value <= input) {
         orientation %= 4;
     }
 }
-console.log(`Part 2 answer: ${value}`) // 363010
+console.log(`Part 2 answer: ${value}`); // 363010

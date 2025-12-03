@@ -1,29 +1,29 @@
-const fs = require("fs")
-let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8")
+const fs = require("fs");
+let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
 
 input = input.split(/\r?\n/)
-    .map(elem => Array.from(elem.match(/(\w+) \((\d+)\)(?: -> ([\w, ]+))?/).slice(1)))
+    .map(elem => Array.from(elem.match(/(\w+) \((\d+)\)(?: -> ([\w, ]+))?/).slice(1)));
 input.forEach(elem => {
-    elem[1] = +elem[1]
-    elem[2] = elem[2]?.split(", ")
-})
-input = input.sort((a, b) => (a[2]?.length || 0) - (b[2]?.length || 0))
+    elem[1] = +elem[1];
+    elem[2] = elem[2]?.split(", ");
+});
+input = input.sort((a, b) => (a[2]?.length || 0) - (b[2]?.length || 0));
 
 
-console.log("AoC 2017 Day 7:")
+console.log("AoC 2017 Day 7:");
 
 let programs = {};
 input.forEach(program => {
     programs[program[0]] = [program[1], program[2]];
-})
+});
 let bottomProgram = Object.keys(programs)
     .find(program =>
         !Object.values(programs)
             .map(elem => elem[1])
-            .some(elem2 => elem2?.includes(program)))
+            .some(elem2 => elem2?.includes(program)));
 
 // Part 1
-console.log(`Part 1 answer: ${bottomProgram}`) // cqmvs
+console.log(`Part 1 answer: ${bottomProgram}`); // cqmvs
 
 // Part 2
 function getTowerWeight(discName) {
@@ -50,4 +50,4 @@ for (const program of Object.values(programs)) {
     correctWeight = incorrectDisc[0] + (weightOccurences[1][0] - incorrectWeight);
     break;
 }
-console.log(`Part 2 answer: ${correctWeight}`) // 2310
+console.log(`Part 2 answer: ${correctWeight}`); // 2310

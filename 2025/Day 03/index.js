@@ -1,10 +1,10 @@
-const fs = require("fs")
-let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8")
+const fs = require("fs");
+let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
 
 input = input.split(/\r?\n/).map(elem => elem.split("").map(Number));
 
 
-console.log("AoC 2025 Day 3:")
+console.log("AoC 2025 Day 3:");
 
 function findMaxJoltageSum(batteryCount) {
     let maxJoltageSum = 0;
@@ -28,8 +28,8 @@ function findMaxJoltageSum(batteryCount) {
 }
 
 // Part 1
-console.log(`Part 1 answer: ${findMaxJoltageSum(2)}`) // 17301
+console.log(`Part 1 answer: ${findMaxJoltageSum(2)}`); // 17301
 
 
 // Part 2
-console.log(`Part 2 answer: ${findMaxJoltageSum(12)}`) // 172162399742349
+console.log(`Part 2 answer: ${findMaxJoltageSum(12)}`); // 172162399742349

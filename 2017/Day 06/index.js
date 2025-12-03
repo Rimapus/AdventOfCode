@@ -1,10 +1,10 @@
-const fs = require("fs")
-let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8")
+const fs = require("fs");
+let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
 
-input = input.split(/\t/).map(Number)
+input = input.split(/\t/).map(Number);
 
 
-console.log("AoC 2017 Day 6:")
+console.log("AoC 2017 Day 6:");
 
 function getIndexOfHighest(input) {
     let maxValue = 0;
@@ -37,8 +37,8 @@ while (!Object.keys(seenStates).includes(input.join(" "))) {
 }
 
 // Part 1
-console.log(`Part 1 answer: ${cycle}`) // 3156
+console.log(`Part 1 answer: ${cycle}`); // 3156
 
 
 // Part 2
-console.log(`Part 2 answer: ${cycle - seenStates[input.join(" ")]}`) // 1610
+console.log(`Part 2 answer: ${cycle - seenStates[input.join(" ")]}`); // 1610

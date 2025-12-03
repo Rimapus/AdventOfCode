@@ -1,10 +1,10 @@
-const fs = require("fs")
-let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8")
+const fs = require("fs");
+let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
 
-input = input.split(/\r?\n/).map(Number)
+input = input.split(/\r?\n/).map(Number);
 
 
-console.log("AoC 2017 Day 5:")
+console.log("AoC 2017 Day 5:");
 
 // Part 1
 let tmpInput = [...input];
@@ -16,7 +16,7 @@ while (instruction < tmpInput.length) {
     instruction += tmpOffset;
     step++;
 }
-console.log(`Part 1 answer: ${step}`) // 375042
+console.log(`Part 1 answer: ${step}`); // 375042
 
 
 // Part 2
@@ -32,4 +32,4 @@ while (instruction < tmpInput.length) {
     instruction += tmpOffset;
     step++;
 }
-console.log(`Part 2 answer: ${step}`) // 28707598
+console.log(`Part 2 answer: ${step}`); // 28707598

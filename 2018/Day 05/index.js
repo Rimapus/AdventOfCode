@@ -1,10 +1,10 @@
-const fs = require("fs")
-let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8")
+const fs = require("fs");
+let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
 
-input = input.split("")
+input = input.split("");
 
 
-console.log("AoC 2018 Day 5:")
+console.log("AoC 2018 Day 5:");
 
 function reactPolymer(input) {
     let i = 0;
@@ -22,7 +22,7 @@ function reactPolymer(input) {
 }
 
 // Part 1
-console.log(`Part 1 answer: ${reactPolymer(input).length}`) // 9288
+console.log(`Part 1 answer: ${reactPolymer(input).length}`); // 9288
 
 
 // Part 2
@@ -34,5 +34,5 @@ alphabet.forEach(letter => {
     tempInput = tempInput.replace(new RegExp(`${letter}`, "gi"), "");
     shortestLength = Math.min(shortestLength, reactPolymer(tempInput.split("")).length);
     tempInput = [...input].join("");
-})
-console.log(`Part 2 answer: ${shortestLength}`) // 5844
+});
+console.log(`Part 2 answer: ${shortestLength}`); // 5844

@@ -1,10 +1,10 @@
-const fs = require("fs")
-let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8")
+const fs = require("fs");
+let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
 
 input = input.split(/\r?\n/).map(elem => [elem[0], Number(elem.slice(1))]);
 
 
-console.log("AoC 2025 Day 1:")
+console.log("AoC 2025 Day 1:");
 
 let dial = 50;
 let zeroes_p1 = 0;
@@ -32,8 +32,8 @@ for (const rotation of input) {
 }
 
 // Part 1
-console.log(`Part 1 answer: ${zeroes_p1}`) // 992
+console.log(`Part 1 answer: ${zeroes_p1}`); // 992
 
 
 // Part 2
-console.log(`Part 2 answer: ${zeroes_p2}`) // 6133
+console.log(`Part 2 answer: ${zeroes_p2}`); // 6133

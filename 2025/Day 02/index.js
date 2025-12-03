@@ -1,10 +1,10 @@
-const fs = require("fs")
-let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8")
+const fs = require("fs");
+let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
 
 input = input.split(",").map(elem => elem.split("-").map(Number));
 
 
-console.log("AoC 2025 Day 2:")
+console.log("AoC 2025 Day 2:");
 
 let invalidsSum1 = 0, invalidsSum2 = 0;
 for (const range of input) {
@@ -29,8 +29,8 @@ for (const range of input) {
 }
 
 // Part 1
-console.log(`Part 1 answer: ${invalidsSum1}`) // 12599655151
+console.log(`Part 1 answer: ${invalidsSum1}`); // 12599655151
 
 
 // Part 2
-console.log(`Part 2 answer: ${invalidsSum2}`) // 20942028255
+console.log(`Part 2 answer: ${invalidsSum2}`); // 20942028255

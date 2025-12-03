@@ -1,10 +1,10 @@
-const fs = require("fs")
-let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8")
+const fs = require("fs");
+let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
 
-input = input.split(/\r?\n/).map(elem => elem.split(" "))
+input = input.split(/\r?\n/).map(elem => elem.split(" "));
 
 
-console.log("AoC 2017 Day 4:")
+console.log("AoC 2017 Day 4:");
 
 let validCount1 = 0;
 let validCount2 = 0;
@@ -24,8 +24,8 @@ input.forEach(password => {
 });
 
 // Part 1
-console.log(`Part 1 answer: ${validCount1}`) // 466
+console.log(`Part 1 answer: ${validCount1}`); // 466
 
 
 // Part 2
-console.log(`Part 2 answer: ${validCount2}`) // 251
+console.log(`Part 2 answer: ${validCount2}`); // 251
