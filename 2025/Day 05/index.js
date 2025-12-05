@@ -24,13 +24,14 @@ function getMaxRange(start, end) {
             newStart = Math.min(newStart, range[0]);
             newEnd = Math.max(newEnd, range[1]);
         });
-        joinableRanges = input[0].filter(range => (range[0] < newStart && range[1] >= newStart - 1) || (range[0] <= newEnd + 1 && range[1] > newEnd));
+        joinableRanges = input[0].filter(rng => (rng[0] < newStart && rng[1] >= newStart - 1) || (rng[0] <= newEnd + 1 && rng[1] > newEnd));
     }
     return [newStart, newEnd];
 }
 
 let newRanges = [];
 input[0].forEach(range => {
+    if (newRanges.filter(rng => range[0] >= rng[0] && range[1] <= rng[1]).length > 0) return;
     const newRange = getMaxRange(range[0], range[1]);
     if (newRanges.filter(rng => rng[0] === newRange[0] && rng[1] === newRange[1]).length === 0)
         newRanges.push(newRange);
