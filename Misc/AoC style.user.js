@@ -10,7 +10,6 @@
 // ==/UserScript==
 
 GM_addStyle(`
-input ~ span:before,
 .leaderboard-entry,
 .privboard-row {
     font-family: "Source Code Pro", monospace;
@@ -20,14 +19,10 @@ input ~ span:before,
 body * {
     text-shadow: none !important;
 }
+
 article em {
     font-weight: bold;
     color: #22ff68;
-}
-
-main > article + p,
-main > article:not(:last-of-type) {
-    opacity: 0.8;
 }
 
 code {
@@ -38,5 +33,9 @@ code {
 
 article code em {
     color: #ff6e6e;
+}
+
+span[title] { /* Easter eggs highlighting */
+    color: #9999cc;
 }
 `);
