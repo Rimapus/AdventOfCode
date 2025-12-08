@@ -24,38 +24,24 @@ for (let point1Index = 0; point1Index < input.length; point1Index++) {
 }
 connections = connections.sort((a, b) => a[1] - b[1]);
 
-const circuits = [];
+const circuits = input.map(point => [point]);
 let answer1 = 0, answer2 = 0;
-for (let connectionIndex = 0; true; connectionIndex++) {
+for (let connectionIndex = 0; circuits.length !== 1; connectionIndex++) {
     const point1 = connections[connectionIndex][0][0];
     const point2 = connections[connectionIndex][0][1];
 
     const point1FoundCircuitIndex = circuits.findIndex(circuit => circuit.map(JSON.stringify).includes(JSON.stringify(point1)));
     const point2FoundCircuitIndex = circuits.findIndex(circuit => circuit.map(JSON.stringify).includes(JSON.stringify(point2)));
 
-    if (point1FoundCircuitIndex !== -1 && point1FoundCircuitIndex === point2FoundCircuitIndex) continue;
+    if (point1FoundCircuitIndex === point2FoundCircuitIndex) continue;
 
-    const oldCircuitsLength = circuits.length;
-    if (point1FoundCircuitIndex !== -1 && point2FoundCircuitIndex !== -1) {
-        circuits[point1FoundCircuitIndex] = circuits[point1FoundCircuitIndex].concat(circuits[point2FoundCircuitIndex]);
-        circuits.splice(point2FoundCircuitIndex, 1);
-    } else if (point1FoundCircuitIndex !== -1 && point2FoundCircuitIndex === -1)
-        circuits[point1FoundCircuitIndex].push(point2);
-    else if (point1FoundCircuitIndex === -1 && point2FoundCircuitIndex !== -1)
-        circuits[point2FoundCircuitIndex].push(point1);
-    else
-        circuits.push([point1, point2]);
+    circuits[point1FoundCircuitIndex] = circuits[point1FoundCircuitIndex].concat(circuits[point2FoundCircuitIndex]);
+    circuits.splice(point2FoundCircuitIndex, 1);
 
-    if (circuits.length < oldCircuitsLength && circuits.length === 1) {
-        answer2 = point1[0] * point2[0];
-        break;
-    }
+    answer2 = point1[0] * point2[0];
 
-    if (connectionIndex === 999) {
-        let allCircuits = circuits.concat(input.filter(box => !circuits.some(circuit => circuit.map(JSON.stringify).includes(JSON.stringify(box)))).map(box => [box]));
-        allCircuits = allCircuits.sort((a, b) => b.length - a.length);
-        answer1 = allCircuits.map(circuit => circuit.length).slice(0, 3).reduce((a, b) => a * b);
-    }
+    if (connectionIndex === 999)
+        answer1 = circuits.map(circuit => circuit.length).sort((a, b) => b - a).slice(0, 3).reduce((a, b) => a * b);
 }
 
 // Part 1
