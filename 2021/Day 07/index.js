@@ -7,8 +7,8 @@ input = input.split(",")
 
 console.log("AoC 2021 Day 7:");
 
-let fuelCosts1 = [];
-let fuelCosts2 = [];
+const fuelCosts1 = [];
+const fuelCosts2 = [];
 for (let i = Math.min(...input); i < Math.max(...input); i++) {
     let fuelCost1 = 0;
     let fuelCost2 = 0;

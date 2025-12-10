@@ -11,7 +11,7 @@ let tmpInput = [...input];
 let step = 0;
 let instruction = 0;
 while (instruction < tmpInput.length) {
-    let tmpOffset = tmpInput[instruction];
+    const tmpOffset = tmpInput[instruction];
     tmpInput[instruction] += 1;
     instruction += tmpOffset;
     step++;
@@ -24,7 +24,7 @@ tmpInput = [...input];
 step = 0;
 instruction = 0;
 while (instruction < tmpInput.length) {
-    let tmpOffset = tmpInput[instruction];
+    const tmpOffset = tmpInput[instruction];
     if (tmpOffset >= 3)
         tmpInput[instruction] -= 1;
     else

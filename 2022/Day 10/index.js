@@ -7,7 +7,7 @@ let currentCycle = 0;
 let register = 1;
 let addxCounter = 0;
 let signalStrengthsSum = 0;
-let CRT = [...Array(6)].map(() => [...Array(40)].map(() => " "));
+const CRT = [...Array(6)].map(() => [...Array(40)].map(() => " "));
 for (let i = 0; i < input.length;) {
     if (addxCounter === 0) register += input[i-1] ? input[i-1][1] : 0;
     if (input[i][0] === "noop") {

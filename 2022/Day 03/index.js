@@ -9,10 +9,10 @@ const alphabet = [...Array(52)].map((_, i) => String.fromCharCode(i + (i < 26 ? 
 console.log("AoC 2022 Day 3:");
 
 // Part 1
-let commonItems = [];
+const commonItems = [];
 input.forEach(elem => {
     elem = [elem.substring(0, elem.length / 2), elem.substring(elem.length / 2).split("")];
-    for (let elem1 of elem[0]) {
+    for (const elem1 of elem[0]) {
         if (elem[1].includes(elem1)) {
             commonItems.push(elem1);
             return;
@@ -25,9 +25,9 @@ console.log(`Part 1 answer: ${commonItems.reduce((a, b) => a + b, 0)}`); // 7917
 
 
 // Part 2
-let groupsBadge = [];
+const groupsBadge = [];
 for (let i = 0; i < input.length; i += 3) {
-    let group = Object.values(input.slice(i, i + 3).map(elem => elem.split("")));
+    const group = Object.values(input.slice(i, i + 3).map(elem => elem.split("")));
     group.sort((a, b) => b.length - a.length);
     for (let j = 0; j < group[0].length; j++) {
         if (group[1].includes(group[0][j]) && group[2].includes(group[0][j])) {

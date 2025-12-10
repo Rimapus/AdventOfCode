@@ -10,7 +10,7 @@ console.log("AoC 2020 Day 2:");
 // Part 1
 let validCount = 0;
 input.forEach(elem => {
-    let caracterCount = (elem[1].match(new RegExp(elem[0][2], "g")) || []).length;
+    const caracterCount = (elem[1].match(new RegExp(elem[0][2], "g")) || []).length;
     if (elem[0][0] <= caracterCount && caracterCount <= elem[0][1]) validCount++;
 });
 

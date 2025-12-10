@@ -12,7 +12,7 @@ console.log(`Part 1 answer: ${input.filter(([a, b, c]) => (a + b > c) && (a + c 
 
 
 // Part 2
-let verticalTriangles = [];
+const verticalTriangles = [];
 for (let col = 0; col < 3; col++) {
     for (let row = 0; row < input.length; row += 3) {
         verticalTriangles.push(input.slice(row, row + 3).map(e => e[col]));

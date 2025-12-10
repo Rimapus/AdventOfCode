@@ -8,20 +8,20 @@ input = input.split(/\r?\n/)
 console.log("AoC 2021 Day 10:");
 
 let syntaxErrorScore = 0;
-let autocompleteScores = [];
+const autocompleteScores = [];
 input.forEach(elem => {
-    let cache = [];
+    const cache = [];
     let autocompleteScore = 0;
 
     for (const elemIndex in elem) {
-        let elem1 = elem[elemIndex];
+        const elem1 = elem[elemIndex];
 
         if (["(", "[", "{", "<"].includes(elem1)) {
             cache.push(elem1);
         } else {
 
-            let openingIndex = ["(", "[", "{", "<"].indexOf(cache[cache.length - 1]);
-            let closingIndex = [")", "]", "}", ">"].indexOf(elem1);
+            const openingIndex = ["(", "[", "{", "<"].indexOf(cache[cache.length - 1]);
+            const closingIndex = [")", "]", "}", ">"].indexOf(elem1);
 
             if (openingIndex === closingIndex) {
                 // Valid chunk

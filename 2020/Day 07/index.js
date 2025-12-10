@@ -16,7 +16,7 @@ input = input.split(/\r?\n/)
 console.log("AoC 2020 Day 7:");
 
 // Part 1
-let validBags = [];
+const validBags = [];
 let toExplore = ["shiny gold"];
 while (toExplore.length !== 0) {
     toExplore.forEach(elem => {
@@ -44,7 +44,7 @@ while (toExplore.length !== 0) {
             }
         });
         
-        let newNumberOfBag = input.find(elem1 => elem1[0] === elem[1])[1].reduce((a, b) => a + b[0], 0);
+        const newNumberOfBag = input.find(elem1 => elem1[0] === elem[1])[1].reduce((a, b) => a + b[0], 0);
         if (!isNaN(newNumberOfBag)) numberOfBag += newNumberOfBag;
         toExplore = toExplore.slice(1, toExplore.length);
     });

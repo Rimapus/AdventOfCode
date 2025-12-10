@@ -8,10 +8,10 @@ input = input.split(/\r?\n/)
 console.log("AoC 2020 Day 5:");
 
 // Part 1
-let seatIDs = [];
+const seatIDs = [];
 input.forEach(elem => {
-    let row = [0, 127];
-    let column = [0, 7];
+    const row = [0, 127];
+    const column = [0, 7];
 
     elem[0].split("").forEach(elem => {
         if (elem === "F") row[1] = row[1] - (((row[1] - row[0]) + 1) / 2);

@@ -6,7 +6,7 @@ input = input.split(/\r?\n/);
 
 console.log("AoC 2016 Day 6:");
 
-let verticalInput = [];
+const verticalInput = [];
 for (let col = 0; col < input[0].length; col++) {
     verticalInput.push(input.map(e => e[col]));
 }

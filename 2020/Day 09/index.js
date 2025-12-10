@@ -7,11 +7,11 @@ input = input.split(/\r?\n/).map(Number);
 console.log("AoC 2020 Day 9:");
 
 // Part 1
-let preambleLength = 25;
+const preambleLength = 25;
 let answer = 0;
 for (let i = preambleLength; i < input.length; i++) {
     let valid = false;
-    let preamble = input.slice(i - preambleLength, i);
+    const preamble = input.slice(i - preambleLength, i);
     preamble.forEach(elem => {
         valid = (preamble.indexOf(input[i] - elem) !== -1) ? true : valid;
     });

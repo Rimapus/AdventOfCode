@@ -17,7 +17,7 @@ function hash(string) {
 }
 
 // Part 1
-let hashSum = input.reduce((a, b) => a + hash(b), 0);
+const hashSum = input.reduce((a, b) => a + hash(b), 0);
 console.log(`Part 1 answer: ${hashSum}`); // 504449
 
 

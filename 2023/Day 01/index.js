@@ -16,7 +16,7 @@ console.log(`Part 1 answer: ${sum1}`); // 54940
 
 
 // Part 2
-let digitWords = {
+const digitWords = {
     "one": 1,
     "two": 2,
     "three": 3,
@@ -30,9 +30,9 @@ let digitWords = {
 
 let input2 = [];
 
-for (let i in input) {
+for (const i in input) {
     input2[i] = new Array(input[i].length).fill(null);
-    for (let j in input[i]) {
+    for (const j in input[i]) {
         if (Number(input[i][j])) { input2[i][j] = Number(input[i][j]); }
     }
 

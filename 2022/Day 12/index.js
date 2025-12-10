@@ -9,22 +9,22 @@ input = input.split(/\r?\n/).map(elem => elem.split(""));
 
 const alphabet = ["S"].concat([...Array(26)].map((_, i) => String.fromCharCode(i + 97)).concat(["E"]));
 
-let startY = input.findIndex(row => row.includes("S"));
-let startX = input[startY].indexOf("S");
-let start = [startX, startY];
-let endY = input.findIndex(row => row.includes("E"));
-let endX = input[endY].indexOf("E");
-let end = [endX, endY];
+const startY = input.findIndex(row => row.includes("S"));
+const startX = input[startY].indexOf("S");
+const start = [startX, startY];
+const endY = input.findIndex(row => row.includes("E"));
+const endX = input[endY].indexOf("E");
+const end = [endX, endY];
 
 let currentCoord = end;
 
-let spots = {};
+const spots = {};
 
 let distanceToEnd = 0;
 for (let i = 0; i < 31; i++) {
     console.log("==========");
-    let currentLetter = input[currentCoord[1]][currentCoord[0]];
-    let neighbors = [
+    const currentLetter = input[currentCoord[1]][currentCoord[0]];
+    const neighbors = [
         [currentCoord[0] - 1, currentCoord[1]], // Left
         [currentCoord[0] + 1, currentCoord[1]], // Right
         [currentCoord[0], currentCoord[1] - 1], // Up
@@ -37,13 +37,13 @@ for (let i = 0; i < 31; i++) {
         return elem;
     });
 
-    let neighborsLetter = neighbors.map(elem => input[elem[1]]?.[elem[0]]);
+    const neighborsLetter = neighbors.map(elem => input[elem[1]]?.[elem[0]]);
     console.log(neighbors, neighborsLetter);
 
 
     distanceToEnd++;
     for (let i = 0; i < neighborsLetter.length; i++) {
-        let elem = neighborsLetter[i];
+        const elem = neighborsLetter[i];
         // console.log(neighbors, neighborsLetter, elem, currentLetter)
         if (alphabet.indexOf(elem) === alphabet.indexOf(currentLetter) - 1 ||
             alphabet.indexOf(elem) === alphabet.indexOf(currentLetter)) {

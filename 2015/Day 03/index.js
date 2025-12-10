@@ -7,7 +7,7 @@ input = input.split("");
 console.log("AoC 2015 Day 3:");
 
 // Part 1
-let currentLocation = [0, 0];
+const currentLocation = [0, 0];
 let visitedLocations = [];
 visitedLocations.push("0,0");
 input.forEach(elem => {
@@ -21,8 +21,8 @@ console.log(`Part 1 answer: ${new Set(visitedLocations).size}`); // 2565
 
 
 // Part 2
-let currentLocation1 = [0, 0];
-let currentLocation2 = [0, 0];
+const currentLocation1 = [0, 0];
+const currentLocation2 = [0, 0];
 visitedLocations = [];
 visitedLocations.push("0,0");
 

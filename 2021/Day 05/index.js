@@ -7,10 +7,10 @@ input = input.split(/\r?\n/)
 
 console.log("AoC 2021 Day 5:");
 
-let grid1 = {}, grid2 = {};
+const grid1 = {}, grid2 = {};
 input.forEach(elem => {
-    let Xs = [elem[0][0], elem[1][0]];
-    let Ys = [elem[0][1], elem[1][1]];
+    const Xs = [elem[0][0], elem[1][0]];
+    const Ys = [elem[0][1], elem[1][1]];
 
     // Totally readable condition ^^
     for (let x = Xs[0], y = Ys[0]; (Xs[1] - Xs[0] < 0 ? (x >= Xs[1]) : (Xs[1] - Xs[0] === 0 ? true : x <= Xs[1])) && (Ys[1] - Ys[0] < 0 ? (y >= Ys[1]) : (Ys[1] - Ys[0] === 0 ? true : y <= Ys[1]));) {

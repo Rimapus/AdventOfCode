@@ -26,7 +26,7 @@ console.log(`Part 1 answer: ${reactPolymer(input).length}`); // 9288
 
 
 // Part 2
-let alphabet = [...Array(26)].map((_, i) => String.fromCharCode(i + 97));
+const alphabet = [...Array(26)].map((_, i) => String.fromCharCode(i + 97));
 let shortestLength = Infinity;
 
 let tempInput = [...input].join("");

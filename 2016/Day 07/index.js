@@ -25,7 +25,7 @@ input.forEach(e => {
         return net.map(e2 => {
             const regEx = /([a-z])(?!\1)([a-z])\1/g;
 
-            let ABAs = [];
+            const ABAs = [];
             let match;
             while (match = regEx.exec(e2)) {
                 ABAs.push(match[0]);

@@ -32,7 +32,7 @@ while (changesCount1 !== 0 || changesCount2 !== 0) {
     for (let y = 0; y < input.length; y++) {
         for (let x = 0; x < input[0].length; x++) {
 
-            let adjacentSeats = [], visibleSeats = [];
+            const adjacentSeats = [], visibleSeats = [];
             directionsOffsets.map(offset => {
                 let visibleSeat, searchx = 0, searchy = 0;
                 do {

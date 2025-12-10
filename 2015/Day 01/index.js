@@ -7,8 +7,8 @@ input = input.split("");
 console.log("AoC 2015 Day 1:");
 
 // Part 1
-let ups = input.filter(elem => elem === "(").length;
-let downs = input.filter(elem => elem === ")").length;
+const ups = input.filter(elem => elem === "(").length;
+const downs = input.filter(elem => elem === ")").length;
 
 console.log(`Part 1 answer: ${ups - downs}`); // 74
 

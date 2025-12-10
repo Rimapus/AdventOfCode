@@ -8,7 +8,7 @@ input = input.split(/\r?\n/).map(Number);
 console.log("AoC 2020 Day 10:");
 
 // Part 1
-let differences = { 1: 0, 3: 0 };
+const differences = { 1: 0, 3: 0 };
 let jolt = 0;
 ([...input].sort((a, b) => a - b)).forEach(elem => {
     if (elem - jolt === 1) differences[1]++;
@@ -27,7 +27,7 @@ console.log(`Part 1 answer: ${differences[1] * differences[3]}`); // 2272
 const tribonacci = [1, 1, 1, 2, 4, 7, 13];
 let arrangementsCount = 1;
 let sectionLength = 0;
-let sorted = ([...input].sort((a, b) => a - b));
+const sorted = ([...input].sort((a, b) => a - b));
 sorted.unshift(0);
 
 sorted.forEach((elem, i, arr) => {

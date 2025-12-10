@@ -9,7 +9,7 @@ console.log("AoC 2015 Day 2:");
 // Part 1
 let neededSurface = 0;
 input.forEach(elem => {
-    let sides = [2*elem[0]*elem[1], 2*elem[1]*elem[2], 2*elem[2]*elem[0]];
+    const sides = [2*elem[0]*elem[1], 2*elem[1]*elem[2], 2*elem[2]*elem[0]];
     neededSurface += Math.min(...sides)/2 + sides.reduce((a, b) => a+b, 0);
 });
 

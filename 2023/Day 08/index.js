@@ -26,8 +26,8 @@ console.log(`Part 1 answer: ${stepCount1}`); // 14257
 
 
 // Part 2
-let startingNodes = network.filter(node => node[0].endsWith("A"));
-let stepCount2 = [];
+const startingNodes = network.filter(node => node[0].endsWith("A"));
+const stepCount2 = [];
 for (let i = 0; i < startingNodes.length; i++) {
 
     let stepCount = 0;

@@ -11,7 +11,7 @@ function runComputer(computerInputs, inputMemory) {
     let i = 0;
     while (!finished) {
         const parametersMode = memory[i].toString().split("").reverse().slice(2);
-        let params = [...Array(3)].map((_, idx) => handleParamMode(parametersMode[idx], memory[i + idx + 1], memory));
+        const params = [...Array(3)].map((_, idx) => handleParamMode(parametersMode[idx], memory[i + idx + 1], memory));
 
         switch (+memory[i].toString().slice(-2)) {
             case 1:

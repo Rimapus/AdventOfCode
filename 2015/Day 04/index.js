@@ -1,6 +1,6 @@
 const fs = require("fs");
 const crypto = require("crypto");
-let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
+const input = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
 
 
 console.log("AoC 2015 Day 4:");

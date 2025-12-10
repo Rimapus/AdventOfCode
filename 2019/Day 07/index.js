@@ -10,7 +10,7 @@ console.log("AoC 2019 Day 7:");
 
 // Part 1
 // https://stackoverflow.com/a/9960925
-let permArr = [], usedChars = [];
+const permArr = [], usedChars = [];
 function getPermutations(arr) {
     let i, ch;
 
@@ -49,7 +49,7 @@ console.log(`Part 1 answer: ${maxOutputSignal}`); // 75228
 // Part 2
 
 function runBigComputer(phaseSetSeq, input = 0) {
-    let maxOutputSignal = 0;
+    const maxOutputSignal = 0;
 
 
     
@@ -57,10 +57,10 @@ function runBigComputer(phaseSetSeq, input = 0) {
 
 
 // UNFINISHED
-let phaseSettingSequences = getPermutations([0, 1, 2, 3, 4]);
+const phaseSettingSequences = getPermutations([0, 1, 2, 3, 4]);
 
 phaseSettingSequences.forEach(seq => {
-    let memory = JSON.parse(JSON.stringify(input));
+    const memory = JSON.parse(JSON.stringify(input));
     let signal = 0;
 
     for (let i = 0; i < 5; i++) {

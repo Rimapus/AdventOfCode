@@ -41,7 +41,7 @@ while (line !== input.length) {
     line = 0;
     lineHistory = [];
     accumulator = 0;
-    let tempInput = JSON.parse(JSON.stringify(input));
+    const tempInput = JSON.parse(JSON.stringify(input));
 
     tempInput[modifiedIndex][0] = input[modifiedIndex][0] === "jmp" ? "nop" : "jmp";
 
@@ -63,7 +63,7 @@ while (line !== input.length) {
         }
     }
 
-    let indexes = [input.flat().indexOf("jmp", (modifiedIndex + 1) * 2), input.flat().indexOf("nop", (modifiedIndex + 1) * 2)].filter(elem => elem !== -1).map(elem1 => elem1 / 2);
+    const indexes = [input.flat().indexOf("jmp", (modifiedIndex + 1) * 2), input.flat().indexOf("nop", (modifiedIndex + 1) * 2)].filter(elem => elem !== -1).map(elem1 => elem1 / 2);
     if (indexes.length > 0) modifiedIndex = Math.min(...indexes);
     else break;
 }

@@ -11,8 +11,8 @@ console.log("AoC 2022 Day 2:");
 let roundsScore = 0;
 input.forEach(elem => {
     let outcomeScore = 0;
-    let enemyShape = elem[0].charCodeAt(0) - "A".charCodeAt(0);
-    let myShape = elem[1].charCodeAt(0) - "X".charCodeAt(0);
+    const enemyShape = elem[0].charCodeAt(0) - "A".charCodeAt(0);
+    const myShape = elem[1].charCodeAt(0) - "X".charCodeAt(0);
 
     if (enemyShape - myShape === 0) {
         // Draw
@@ -44,7 +44,7 @@ input.forEach(elem => {
     }
 
     let outcomeScore = 0;
-    let enemyShape = elem[0].charCodeAt(0) - "A".charCodeAt(0);
+    const enemyShape = elem[0].charCodeAt(0) - "A".charCodeAt(0);
 
     if (enemyShape - playedShape === 0) {
         // Draw

@@ -12,11 +12,11 @@ input = input.sort((a, b) => (a[2]?.length || 0) - (b[2]?.length || 0));
 
 console.log("AoC 2017 Day 7:");
 
-let programs = {};
+const programs = {};
 input.forEach(program => {
     programs[program[0]] = [program[1], program[2]];
 });
-let bottomProgram = Object.keys(programs)
+const bottomProgram = Object.keys(programs)
     .find(program =>
         !Object.values(programs)
             .map(elem => elem[1])

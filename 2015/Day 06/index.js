@@ -4,12 +4,12 @@ let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
 input = input.split(/\r?\n/).map(elem => elem.split(" "));
 
 // JSON.parse etc... because it keep the same reference so if we modify one column all other are affected
-let lightGrid = JSON.parse(JSON.stringify(new Array(1000).fill(new Array(1000).fill([0, 0]))));
+const lightGrid = JSON.parse(JSON.stringify(new Array(1000).fill(new Array(1000).fill([0, 0]))));
 
 for (let i = 0; i < input.length; i++) {
-    let elem = input[i];
-    let startCoords = elem[elem.length - 3].split(",").map(Number);
-    let endCoords = elem[elem.length - 1].split(",").map(Number);
+    const elem = input[i];
+    const startCoords = elem[elem.length - 3].split(",").map(Number);
+    const endCoords = elem[elem.length - 1].split(",").map(Number);
 
     for (let j = startCoords[1]; j <= endCoords[1]; j++) {
         for (let k = startCoords[0]; k <= endCoords[0]; k++) {

@@ -7,11 +7,11 @@ input = input.split(/\r?\n/)
 
 console.log("AoC 2020 Day 12:");
 
-let shipPosition1 = [0, 0]; // x, y
+const shipPosition1 = [0, 0]; // x, y
 let shipForward = 0; // 0 = E, 1 = S, 2 = W, 3 = N
 
-let shipPosition2 = [0, 0]; // x, y
-let waypointPosition = [10, 1]; // Relative to the ship
+const shipPosition2 = [0, 0]; // x, y
+const waypointPosition = [10, 1]; // Relative to the ship
 input.forEach(elem => {
     const turns = (elem[1] / 90);
 

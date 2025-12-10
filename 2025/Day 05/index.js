@@ -9,7 +9,7 @@ input[1] = input[1].split(/\r?\n/).map(Number);
 console.log("AoC 2025 Day 5:");
 
 // Part 1
-let validIds = input[1].reduce((a, b) => a + input[0].some(range => b >= range[0] && b <= range[1]), 0);
+const validIds = input[1].reduce((a, b) => a + input[0].some(range => b >= range[0] && b <= range[1]), 0);
 console.log(`Part 1 answer: ${validIds}`); // 640
 
 
@@ -29,7 +29,7 @@ function getMaxRange(start, end) {
     return [newStart, newEnd];
 }
 
-let newRanges = [];
+const newRanges = [];
 input[0].forEach(range => {
     if (newRanges.filter(rng => range[0] >= rng[0] && range[1] <= rng[1]).length > 0) return;
     const newRange = getMaxRange(range[0], range[1]);
@@ -37,5 +37,5 @@ input[0].forEach(range => {
         newRanges.push(newRange);
 });
 
-let consideredValid = newRanges.reduce((a, b) => a + (b[1] - b[0] + 1), 0);
+const consideredValid = newRanges.reduce((a, b) => a + (b[1] - b[0] + 1), 0);
 console.log(`Part 2 answer: ${consideredValid}`); // 365804144481581

@@ -23,7 +23,7 @@ function createNewYear(year) {
 
         fs.mkdirSync(`${__dirname}/${year}/Day ${newDay}`, { recursive: true });
         fs.writeFileSync(`${__dirname}/${year}/Day ${newDay}/input.txt`, "");
-        fs.writeFileSync(`${__dirname}/${year}/Day ${newDay}/index.js`, `const fs = require("fs");\nlet input = fs.readFileSync(\`\${__dirname\}/input.txt\`, "utf8");\n\n\nconsole.log("AoC ${year} Day ${i}:");\n\n// Part 1\nconsole.log(\`Part 1 answer: \${""}\`); // \n\n\n// Part 2\nconsole.log(\`Part 2 answer: \${""}\`); // `);
+        fs.writeFileSync(`${__dirname}/${year}/Day ${newDay}/index.js`, `const fs = require("fs");\nconst input = fs.readFileSync(\`\${__dirname\}/input.txt\`, "utf8");\n\n\nconsole.log("AoC ${year} Day ${i}:");\n\n// Part 1\nconsole.log(\`Part 1 answer: \${""}\`); // \n\n\n// Part 2\nconsole.log(\`Part 2 answer: \${""}\`); // `);
     }
 }
 

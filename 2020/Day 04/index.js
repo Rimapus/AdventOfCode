@@ -8,7 +8,7 @@ input = input.split(/\r?\n\r?\n/)
 console.log("AoC 2020 Day 4:");
 
 // Part 1
-let fields = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"];
+const fields = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"];
 let validCount = 0;
 input.forEach(elem => {
     if (fields.every(field => elem.filter(elem1 => elem1.includes(field)).length >= 1)) validCount++;
@@ -23,7 +23,7 @@ input.forEach(elem => {
     if (fields.every(field => elem.filter(elem1 => elem1.includes(field)).length >= 1)) {
         let valid = true;
         elem.forEach(elem1 => {
-            let field = elem1.split(":");
+            const field = elem1.split(":");
             switch (field[0]) {     // Very ugly code but can be condensed with regex I think ?...
                 case "byr":
                     valid = valid && (1920 <= +field[1] && +field[1] <= 2002);

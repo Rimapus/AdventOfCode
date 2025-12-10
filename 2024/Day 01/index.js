@@ -2,8 +2,8 @@ const fs = require("fs");
 let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
 
 input = input.split(/\r?\n/).map(elem => elem.split("   "));
-let col1 = input.map(elem => elem[0]).sort((a, b) => a - b);
-let col2 = input.map(elem => elem[1]).sort((a, b) => a - b);
+const col1 = input.map(elem => elem[0]).sort((a, b) => a - b);
+const col2 = input.map(elem => elem[1]).sort((a, b) => a - b);
 
 console.log("AoC 2024 Day 1:");
 

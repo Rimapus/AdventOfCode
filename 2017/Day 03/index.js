@@ -18,7 +18,7 @@ let y = Math.floor(squareSize / 2);
 let value = 1;
 
 // Thanks https://stackoverflow.com/a/32672170 for the track
-let xDiffs = [1, 0, -1, 0],  // East, north, west, south
+const xDiffs = [1, 0, -1, 0],  // East, north, west, south
     yDiffs = [0, -1, 0, 1];
 let orientation = 0; // Starting east
 
@@ -32,7 +32,7 @@ while (value !== input) {
     }
     value++;
 }
-let distanceToStart = Math.abs(x - Math.floor(squareSize / 2)) + Math.abs(y - Math.floor(squareSize / 2));
+const distanceToStart = Math.abs(x - Math.floor(squareSize / 2)) + Math.abs(y - Math.floor(squareSize / 2));
 console.log(`Part 1 answer: ${distanceToStart}`); // 326
 
 

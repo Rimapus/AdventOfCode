@@ -1,13 +1,13 @@
 const fs = require("fs");
 const crypto = require("crypto");
-let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
+const input = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
 
 
 console.log("AoC 2016 Day 5:");
 
 let increment = 0;
 let password1 = "";
-let password2 = [];
+const password2 = [];
 while (password1.length < 8 || password2.join("").length < 8) {
     const hash = crypto.createHash("md5").update(`${input}${increment}`).digest("hex");
     if (hash.startsWith("00000")) {

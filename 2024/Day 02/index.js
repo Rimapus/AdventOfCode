@@ -7,7 +7,7 @@ input = input.split(/\r?\n/).map(elem => elem.split(" ").map(Number));
 console.log("AoC 2024 Day 2:");
 
 function isSafeReport(report) {
-    let diffs = [];
+    const diffs = [];
     for (let i = 0; i < report.length - 1; i++)
         diffs[i] = report[i + 1] - report[i];
     return diffs.every(diff => diff <= 0 && diff <= -1 && diff >= -3) ||
@@ -31,7 +31,7 @@ input.forEach(report => {
         return;
     }
     for (let i = 0; i < report.length; i++) {
-        let tempReport = [...report];
+        const tempReport = [...report];
         tempReport.splice(i, 1);
         if (isSafeReport(tempReport)) {
             safeReports2++;

@@ -24,10 +24,10 @@ console.log(`Part 1 answer: ${visibleTrees}`); // 1733
 
 
 // Part 2
-let viewingDistances = [];
+const viewingDistances = [];
 for (let i = 1; i < input.length - 1; i++) {
     for (let j = 1; j < input[i].length - 1; j++) {
-        let treeViewingDistances = [0, 0, 0, 0];
+        const treeViewingDistances = [0, 0, 0, 0];
 
         [...input[i].slice(0, j)].reverse().every(elem => {
             treeViewingDistances[0]++;

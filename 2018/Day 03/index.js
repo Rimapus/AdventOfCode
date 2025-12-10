@@ -16,7 +16,7 @@ input.forEach(claim => {
     maxHeight = Math.max(maxHeight, claim[2] + claim[4]);
 });
 
-let grid = JSON.parse(JSON.stringify(new Array(maxHeight).fill(new Array(maxWidth).fill(0))));
+const grid = JSON.parse(JSON.stringify(new Array(maxHeight).fill(new Array(maxWidth).fill(0))));
 input.forEach(claim => {
     for (let i = claim[2]; i < claim[2] + claim[4]; i++) {
         for (let j = claim[1]; j < claim[1] + claim[3]; j++) {

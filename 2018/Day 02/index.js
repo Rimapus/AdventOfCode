@@ -10,7 +10,7 @@ console.log("AoC 2018 Day 2:");
 let pairCount = 0;
 let trioCount = 0;
 input.forEach(boxId => {
-    let visitedLetters = [];
+    const visitedLetters = [];
     let containsPair = false;
     let containsTrio = false;
     for (let i = 0; i < boxId.length; i++) {
@@ -40,7 +40,7 @@ console.log(`Part 1 answer: ${pairCount * trioCount}`); // 7163
 
 
 // Part 2
-let answer2 = [];
+const answer2 = [];
 for (let i = 0; i < input.length; i++) {
     for (let j = i + 1; j < input.length; j++) {
         let diffLettersCount = 0;

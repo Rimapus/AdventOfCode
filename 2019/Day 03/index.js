@@ -15,9 +15,9 @@ const manhattanDistance = (pt1, pt2) => {
 const directions = { "L": [-1, 0], "R": [1, 0], "U": [0, 1], "D": [0, -1] };
 const parseWire = (inpt) => {
     let x = 0, y = 0;
-    let wire = [];
+    const wire = [];
     for (let i = 0; i < inpt.length; i++) {
-        let segment = { from: [x, y] };
+        const segment = { from: [x, y] };
         x += directions[inpt[i][0]][0] * inpt[i][1], y += directions[inpt[i][0]][1] * inpt[i][1];
         segment.to = [x, y];
         segment.distance = manhattanDistance(segment.from, segment.to);
@@ -31,7 +31,7 @@ const wire2 = parseWire(input[1]);
 
 
 // Thx https://www.reddit.com/r/adventofcode/comments/e5bz2w/comment/faecknr
-let intersections = [];
+const intersections = [];
 wire1.forEach((segment1, i1) => {
     wire2.forEach((segment2, i2) => {
         if ((segment1.from[0] === segment1.to[0]) ^ (segment2.from[0] === segment2.to[0])) {

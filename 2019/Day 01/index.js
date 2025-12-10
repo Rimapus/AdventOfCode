@@ -9,7 +9,7 @@ console.log("AoC 2019 Day 1:");
 
 let fuelSum1 = 0;
 let fuelSum2 = 0;
-for (let x of input) {
+for (const x of input) {
     fuelSum1 += Math.floor(x / 3) - 2;
 
     let fuelRequired = Math.floor(x / 3) - 2;

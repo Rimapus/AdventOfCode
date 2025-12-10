@@ -7,7 +7,7 @@ input = input.split(/\r?\n/)
 
 console.log("AoC 2021 Day 11:");
 
-let board = JSON.parse(JSON.stringify(input));
+const board = JSON.parse(JSON.stringify(input));
 let flashed = [];
 let flashedAfter100 = 0;
 let i = 0;
@@ -23,16 +23,16 @@ while (flashed.length !== board.flat().length) {
     }
 
     function Flash(y, x) { // Increase adjacents octopuses by 1
-        let tl = [y - 1, x - 1];
-        let t = [y - 1, x];
-        let tr = [y - 1, x + 1];
-        let ml = [y, x - 1];
-        let mr = [y, x + 1];
-        let bl = [y + 1, x - 1];
-        let b = [y + 1, x];
-        let br = [y + 1, x + 1];
+        const tl = [y - 1, x - 1];
+        const t = [y - 1, x];
+        const tr = [y - 1, x + 1];
+        const ml = [y, x - 1];
+        const mr = [y, x + 1];
+        const bl = [y + 1, x - 1];
+        const b = [y + 1, x];
+        const br = [y + 1, x + 1];
 
-        let adjacents = [tl, t, tr, ml, mr, bl, b, br].filter(e => board[e[0]]?.[e[1]]);
+        const adjacents = [tl, t, tr, ml, mr, bl, b, br].filter(e => board[e[0]]?.[e[1]]);
 
         adjacents.forEach(e => board[e[0]][e[1]]++);
         flashed.push([y, x]);

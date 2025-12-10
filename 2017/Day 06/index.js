@@ -19,7 +19,7 @@ function getIndexOfHighest(input) {
     return maxIndex;
 }
 
-let seenStates = {};
+const seenStates = {};
 let cycle = 0;
 while (!Object.keys(seenStates).includes(input.join(" "))) {
     seenStates[input.join(" ")] = cycle;

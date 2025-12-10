@@ -7,9 +7,9 @@ input = input.split(", ")
 
 console.log("AoC 2016 Day 1:");
 
-let position = [0, 0]; // x, y
+const position = [0, 0]; // x, y
 let forward = 0; // 0 = N, 1 = E, 2 = S, 3 = W
-let positionHistory = [];
+const positionHistory = [];
 let answer2;
 input.forEach(elem => {
     switch (elem[0]) {

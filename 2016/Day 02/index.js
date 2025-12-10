@@ -12,7 +12,7 @@ const keypad = [[1, 2, 3],
     [4, 5, 6],
     [7, 8, 9]];
 let currentDigitCoords = [1, 1];
-let code = [];
+const code = [];
 
 const keypad2 = [[null, null, 1, null, null],
     [null, 2, 3, 4, null],
@@ -20,7 +20,7 @@ const keypad2 = [[null, null, 1, null, null],
     [null, "A", "B", "C", null],
     [null, null, "D", null, null]];
 let currentDigitCoords2 = [0, 2];
-let code2 = [];
+const code2 = [];
 
 input.forEach((e, i) => {
     let newDigitCoords = currentDigitCoords;

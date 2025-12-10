@@ -10,7 +10,7 @@ console.log("AoC 2015 Day 8:");
 let literalLength = 0;
 let memoryLength = 0;
 for (let i = 0; i < input.length; i++) {
-    let elem = input[i];
+    const elem = input[i];
     literalLength += elem.length;
     memoryLength += eval(elem).length;
 }

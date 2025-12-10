@@ -7,8 +7,8 @@ input = input.split(/\r?\n/)
 
 console.log("AoC 2020 Day 3:");
 
-let slopes = [[1, 1], [3, 1], [5, 1], [7, 1], [1, 2]];
-let results = [];
+const slopes = [[1, 1], [3, 1], [5, 1], [7, 1], [1, 2]];
+const results = [];
 slopes.forEach(slope => {
     let x = 0, y = 0;
     let treesCount = 0;

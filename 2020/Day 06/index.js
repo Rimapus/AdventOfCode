@@ -18,7 +18,7 @@ console.log(`Part 1 answer: ${sum}`); // 6799
 
 // Part 2
 sum = 0;
-let alphabet = [...Array(26)].map((_, i) => String.fromCharCode(i + 97));
+const alphabet = [...Array(26)].map((_, i) => String.fromCharCode(i + 97));
 input.forEach(elem => {
     let commonCount = 0;
     for (let i = 0; i < alphabet.length; i++) {
