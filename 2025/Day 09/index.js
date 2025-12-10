@@ -49,13 +49,13 @@ function isPointInWall(point) {
     return foundWall !== undefined;
 }
 
-const outsidePoints = [];
+const outsidePoints = {};
 function floodFillOutside(startPoint) {
     const stack = [startPoint];
 
     while (stack.length !== 0) {
         const currentPoint = stack.shift();
-        if (outsidePoints.some(point => point[0] === currentPoint[0] && point[1] === currentPoint[1]))
+        if (outsidePoints[currentPoint[0]]?.includes(currentPoint[1]))
             continue;
         if (currentPoint[0] < 0 || currentPoint[0] > Object.values(xs).length + 1 ||
             currentPoint[1] < 0 || currentPoint[1] > Object.values(ys).length + 1)
@@ -63,7 +63,10 @@ function floodFillOutside(startPoint) {
         if (isPointInWall(currentPoint))
             continue;
 
-        outsidePoints.push(currentPoint);
+        if (outsidePoints[currentPoint[0]])
+            outsidePoints[currentPoint[0]].push(currentPoint[1]);
+        else
+            outsidePoints[currentPoint[0]] = [currentPoint[1]];
 
         stack.push([currentPoint[0] - 1, currentPoint[1]]);
         stack.push([currentPoint[0] + 1, currentPoint[1]]);
@@ -74,7 +77,7 @@ function floodFillOutside(startPoint) {
 floodFillOutside([0, 0]);
 
 function isValidPoint(point) {
-    return !outsidePoints.some(p => p[0] === point[0] && p[1] === point[1]);
+    return !outsidePoints[point[0]].includes(point[1]);
 }
 
 function isValidRectangle(point1, point2) {
