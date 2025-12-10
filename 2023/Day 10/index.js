@@ -64,6 +64,4 @@ const answer2 = input.slice(ly, -ly)
         .filter((_, x) => !visitedTiles.includes(`${x + lx}, ${y + ly}`))
         .length);
 
-console.log(answer2.reduce((a, b) => a + b));
-
 console.log(`Part 2 answer: ${answer2.reduce((a, b) => a + b)}`); // 527
