@@ -35,7 +35,7 @@ article code em {
     color: #ff6e6e;
 }
 
-span[title] { /* Easter eggs highlighting */
-    color: #9999cc;
+article *[title] {
+    border-bottom: 1px dotted #ffff66;
 }
 `);
