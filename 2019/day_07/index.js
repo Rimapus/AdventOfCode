@@ -1,5 +1,5 @@
 const fs = require("fs");
-const { runComputer } = require("../Day 05/computer.js");
+const { runComputer } = require("../day_05/computer.js");
 let input = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
 
 input = input.split(",")
